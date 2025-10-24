@@ -117,6 +117,12 @@
       .publication-item p {
         margin: 0.2rem 0;
       }
+      .page-content {
+        display: none;
+      }
+      .page-content.is-active {
+        display: block;
+      }
       .profile-section {
         display: flex;
         align-items: flex-start;
@@ -131,9 +137,19 @@
       .profile-image:hover {
         cursor: pointer;
       }
+      .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        column-gap: 1.5rem;
+        row-gap: 0.5rem;
+      }
       .social-links a {
-        margin-right: 1.5rem;
         text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
       }
       .social-links a:hover {
         color: #3273dc;
@@ -252,6 +268,9 @@
           <a class="navbar-item nav-link is-active" data-page="home">
             <i class="fas fa-home"></i>&nbsp;&nbsp;Home
           </a>
+          <a class="navbar-item nav-link" data-page="research">
+            <i class="fas fa-flask"></i>&nbsp;&nbsp;Research
+          </a>
           <!-- <a class="navbar-item nav-link" data-page="blog">
             <i class="fas fa-blog"></i>&nbsp;&nbsp;Blog
           </a> -->
@@ -280,10 +299,10 @@
                     <i class="fas fa-graduation-cap"></i>
                     <span>Google Scholar</span>
                 </a>
-                <p><a href="https://github.com/YuyangJ0">
+                <a href="https://github.com/YuyangJ0">
                     <i class="fab fa-github"></i>
                     <span>GitHub</span>
-                </a></p>
+                </a>
                 <a href="https://www.semanticscholar.org/author/Yuyang-Jiang/2311890798">
                     <i class="fas fa-book-open"></i>
                     <span>Semantic Scholar</span>
@@ -353,52 +372,60 @@
               </div>
             </div>
 
-            <!-- Publications Section -->
-            <h1 class="title">Publications</h1>
+          </div>
+        </div>
+      </section>
+    </div>
 
-            <div class="publication-section">
-                <h2>Resources and Evaluation</h2>
-                <div class="publication-item">
-                    <span class="publication-title">CLEAR: A Clinically Grounded Tabular Framework for Radiology Report Evaluation</span><br>
-                    <b>Yuyang Jiang</b>, Chacha Chen, Shengyuan Wang, Feng Li, Zecong Tang, Benjamin M. Mervak, Lydia Chelala, Christopher M Straus, Reve Chahine, Samuel G. Armato III*, Chenhao Tan*.<br>
-                    <i><b>EMNLP 2025</b>.</i> <a href="https://arxiv.org/abs/2505.16325">[Preprint]</a> <a href="https://drive.google.com/file/d/1oX7UUsaACi4oRvpGFjT9FLPM1DTbWYPX/view?usp=sharing">[Poster]</a> <a href="https://docs.google.com/presentation/d/1roMobCqIevdpY2zmJQAnWkD8xV26-XDq/edit?usp=sharing&ouid=108721294297246546018&rtpof=true&sd=true">[Slides]</a> [Dataset] <a href="https://github.com/ChicagoHAI/CLEAR-evaluator">[Code]</a> 
-                </div>
-                <div class="publication-item">
-                    <span class="publication-title">GPT-4V Cannot Generate Radiology Reports Yet</span><br>
-                    <b>Yuyang Jiang*</b>, Chacha Chen*, Dang Nguyen, Benjamin M. Mervak, Chenhao Tan.<br>
-                    <i><b>ML4H 2024, NAACL 2025</b>.</i> <a href="https://aclanthology.org/2025.findings-naacl.113/">[Paper]</a> <a href="https://drive.google.com/file/d/1VaOAiMxAc9ocIyIuKkfctwISW9HHW0VQ/view?usp=drive_link">[Poster]</a> <a href="https://docs.google.com/presentation/d/1NWkoJQ66-lk2iBfYN8xrhIweX6Hwd90R/edit?usp=drive_link&ouid=108721294297246546018&rtpof=true&sd=true">[Slides]</a> <a href="https://github.com/ChicagoHAI/cxr-eval-gpt-4v">[Code]</a>
-                </div>
+    <!-- Research Page Content -->
+    <div id="research-page" class="page-content">
+      <section class="section">
+        <div class="container">
+          <!-- Publications Section -->
+          <h1 class="title">Publications</h1>
+
+          <div class="publication-section">
+              <h2>Resources and Evaluation</h2>
+              <div class="publication-item">
+                  <span class="publication-title">CLEAR: A Clinically Grounded Tabular Framework for Radiology Report Evaluation</span><br>
+                  <b>Yuyang Jiang</b>, Chacha Chen, Shengyuan Wang, Feng Li, Zecong Tang, Benjamin M. Mervak, Lydia Chelala, Christopher M Straus, Reve Chahine, Samuel G. Armato III*, Chenhao Tan*.<br>
+                  <i><b>EMNLP 2025</b>.</i> <a href="https://arxiv.org/abs/2505.16325">[Preprint]</a> <a href="https://drive.google.com/file/d/1oX7UUsaACi4oRvpGFjT9FLPM1DTbWYPX/view?usp=sharing">[Poster]</a> <a href="https://docs.google.com/presentation/d/1roMobCqIevdpY2zmJQAnWkD8xV26-XDq/edit?usp=sharing&ouid=108721294297246546018&rtpof=true&sd=true">[Slides]</a> [Dataset] <a href="https://github.com/ChicagoHAI/CLEAR-evaluator">[Code]</a> 
+              </div>
+              <div class="publication-item">
+                  <span class="publication-title">GPT-4V Cannot Generate Radiology Reports Yet</span><br>
+                  <b>Yuyang Jiang*</b>, Chacha Chen*, Dang Nguyen, Benjamin M. Mervak, Chenhao Tan.<br>
+                  <i><b>ML4H 2024, NAACL 2025</b>.</i> <a href="https://aclanthology.org/2025.findings-naacl.113/">[Paper]</a> <a href="https://drive.google.com/file/d/1VaOAiMxAc9ocIyIuKkfctwISW9HHW0VQ/view?usp=drive_link">[Poster]</a> <a href="https://docs.google.com/presentation/d/1NWkoJQ66-lk2iBfYN8xrhIweX6Hwd90R/edit?usp=drive_link&ouid=108721294297246546018&rtpof=true&sd=true">[Slides]</a> <a href="https://github.com/ChicagoHAI/cxr-eval-gpt-4v">[Code]</a>
+              </div>
+          </div>
+
+          <div class="publication-section">
+              <h2>Safety and Alignment</h2>
+              <div class="publication-item">
+                  <span class="publication-title">Beyond One-Way Influence: Bidirectional Opinion Dynamics in Multi-Turn Human-LLM Interactions</span><br>
+                  <b>Yuyang Jiang</b>, Longjie Guo*, Yuchen Wu*, Aylin Caliskan, Tanu Mitra and Hua Shen.<br>
+                  <i><b>Submitted</b>.</i> <a href="https://arxiv.org/abs/2510.20039">[Preprint]</a>
+              </div>
+              <div class="publication-item">
+                Our debate work will come soon!
+              </div>
+          </div>
+
+          <!-- Teaching Experience Section -->
+          <h1 class="title">Teaching Assistantships</h1>
+          <div class="teaching-section">
+            <div class="teaching-item">
+              <span class="teaching-title">BUSN 32200: Artificial Intelligence</span>
+              <span class="teaching-details">MBA Course (Course Design Team Member) | Winter 2025 | Instructor: Dacheng Xiu</span>
             </div>
-
-            <div class="publication-section">
-                <h2>Safety and Alignment</h2>
-                <div class="publication-item">
-                    <span class="publication-title">Beyond One-Way Influence: Bidirectional Opinion Dynamics in Multi-Turn Human-LLM Interactions</span><br>
-                    <b>Yuyang Jiang</b>, Longjie Guo*, Yuchen Wu*, Aylin Caliskan, Tanu Mitra and Hua Shen.<br>
-                    <i><b>Submitted</b>.</i> <a href="https://arxiv.org/abs/2510.20039">[Preprint]</a>
-                </div>
-                <div class="publication-item">
-                  Our debate work will come soon!
-                </div>
+            
+            <div class="teaching-item">
+              <span class="teaching-title">BUSN 32810: Artificial Intelligence</span>
+              <span class="teaching-details">EMBA Course (Course Design Team Member) | Summer 2024 | Instructor: Dacheng Xiu</span>
             </div>
-
-            <!-- Teaching Experience Section -->
-            <h1 class="title">TAs</h1>
-            <div class="teaching-section">
-              <div class="teaching-item">
-                <span class="teaching-title">BUSN 32200: Artificial Intelligence</span>
-                <span class="teaching-details">MBA Course (Course Design Team Member) | Winter 2025 | Instructor: Dacheng Xiu</span>
-              </div>
-              
-              <div class="teaching-item">
-                <span class="teaching-title">BUSN 32810: Artificial Intelligence</span>
-                <span class="teaching-details">EMBA Course (Course Design Team Member) | Summer 2024 | Instructor: Dacheng Xiu</span>
-              </div>
-              
-              <div class="teaching-item">
-                <span class="teaching-title">BUSN 20800: Big Data</span>
-                <span class="teaching-details">Undergraduate Course | Winter 2024 | Instructor: Dacheng Xiu</span>
-              </div>
+            
+            <div class="teaching-item">
+              <span class="teaching-title">BUSN 20800: Big Data</span>
+              <span class="teaching-details">Undergraduate Course | Winter 2024 | Instructor: Dacheng Xiu</span>
             </div>
           </div>
         </div>
