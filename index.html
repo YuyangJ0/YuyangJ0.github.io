@@ -187,6 +187,26 @@
       .experience-logo img {
         max-height: 60px;
       }
+      .blog-list {
+        max-width: 820px;
+        margin: 0 auto;
+      }
+      .blog-card {
+        padding: 1.5rem;
+        border: 1px solid #e6e6e6;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      }
+      .blog-title {
+        font-size: 1.35rem;
+        margin-bottom: 0.35rem;
+      }
+      .blog-meta {
+        font-size: 0.95rem;
+        color: #666;
+        margin-bottom: 0.8rem;
+      }
       
       /* Navigation styles */
       .navbar {
@@ -381,7 +401,6 @@
         <div class="container">
           <!-- Publications Section -->
           <div class="content is-size-7 has-text-grey">
-            <span>Legend:</span>
             <span>🤖 AI conference</span>
             <span>·</span>
             <span>🩻 Healthcare conference</span>
@@ -411,6 +430,22 @@
               </div>
           </div>
 
+          <!-- Academic Service Section -->
+          <h1 class="title">Academic Service</h1>
+          <div class="content academic-service">
+            <p><strong>Presentation:</strong>
+              <a href="https://2025.emnlp.org/">EMNLP 2025</a> 🤖 (Poster),
+              <a href="https://2025.naacl.org/">NAACL 2025</a> 🤖 (Poster),
+              <a href="https://ahli.cc/ml4h/">ML4H 2024</a> 🩻 (Poster),
+              <a href="https://sites.google.com/view/multimodal-ai-ttic-2024/home">TTIC Multimodal AI Workshop 2024</a> 🤖 (Lightning Talk)
+            </p>
+            <p><strong>Reviewer:</strong>
+              <a href="https://www.chilconference.org/">CHIL 2026</a> 🩻,
+              <a href="https://journals.sagepub.com/home/dhj">Sage Digital Health</a> 🩻,
+              <a href="https://chi2026.acm.org/">CHI 2026</a> 🤖
+            </p>
+          </div>
+
           <!-- Teaching Experience Section -->
           <h1 class="title">Teaching Experience</h1>
           <div class="teaching-section">
@@ -429,22 +464,6 @@
               <span class="teaching-details">Undergraduate Course | Winter 2024 | Instructor: Dacheng Xiu</span>
             </div>
           </div>
-
-          <!-- Academic Service Section -->
-          <h1 class="title">Academic Service</h1>
-          <div class="content academic-service">
-            <p><strong>Presentation:</strong>
-              <a href="https://2025.emnlp.org/">EMNLP 2025</a> 🤖 (Poster),
-              <a href="https://2025.naacl.org/">NAACL 2025</a> 🤖 (Poster),
-              <a href="https://ahli.cc/ml4h/">ML4H 2024</a> 🩻 (Poster),
-              <a href="https://sites.google.com/view/multimodal-ai-ttic-2024/home">TTIC Multimodal AI Workshop 2024</a> 🤖 (Lightning Talk)
-            </p>
-            <p><strong>Reviewer:</strong>
-              <a href="https://www.chilconference.org/">CHIL 2026</a> 🩻,
-              <a href="https://journals.sagepub.com/home/dhj">Sage Digital Health</a> 🩻,
-              <a href="https://chi2026.acm.org/">CHI 2026</a> 🤖
-            </p>
-          </div>
         </div>
       </section>
     </div>
@@ -455,17 +474,19 @@
         <div class="container">
           <h1 class="title">Blogs</h1>
 
-          <div class="box">
-            <h2 class="title is-4">Collaborative Disagreement Resolution Outperforms Debate</h2>
-            <p class="is-size-7 has-text-grey">By Yuyang Jiang*, Chacha Chen*, Shi Feng, Chenhao Tan · Dec 20, 2025</p>
-            <div class="content">
-              <p>Full blog coming soon!</p>
-              <p><a href="https://hypogenic.ai/ideahub/idea/sCEYT0AaFbwrTjm18cA5" target="_blank" rel="noopener">Original idea link</a></p>
-            </div>
-            <div class="tags">
-              <span class="tag is-info is-light">AI alignment</span>
-              <span class="tag is-info is-light">LLM</span>
-            </div>
+          <div class="blog-list">
+            <article class="blog-card">
+              <h2 class="blog-title">Collaborative Disagreement Resolution Outperforms Debate</h2>
+              <div class="blog-meta">By Yuyang Jiang*, Chacha Chen*, Shi Feng, Chenhao Tan · Dec 20, 2025</div>
+              <div class="content">
+                <p>Full blog coming soon!</p>
+                <p><a href="https://hypogenic.ai/ideahub/idea/sCEYT0AaFbwrTjm18cA5" target="_blank" rel="noopener">Original idea link</a></p>
+              </div>
+              <div class="tags">
+                <span class="tag is-info is-light">AI alignment</span>
+                <span class="tag is-info is-light">LLM</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -477,7 +498,8 @@
         // Page navigation
         const navLinks = document.querySelectorAll('.nav-link');
         const pages = document.querySelectorAll('.page-content');
-        
+        const allLinks = document.querySelectorAll('a[href]');
+
         navLinks.forEach(link => {
           link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -493,6 +515,15 @@
             const targetPage = this.getAttribute('data-page');
             document.getElementById(targetPage + '-page').classList.add('is-active');
           });
+        });
+
+        allLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (!href || href.startsWith('#')) {
+            return;
+          }
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener');
         });
       });
     </script>
