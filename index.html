@@ -160,6 +160,23 @@
       .social-links a:hover {
         color: #3273dc;
       }
+      .hobbies-note {
+        max-width: 340px;
+        margin-top: 1rem;
+        color: #8a8f98;
+        font-size: 0.78rem;
+        line-height: 1.6;
+        text-align: center;
+      }
+      .hobbies-label {
+        display: block;
+        margin-bottom: 0.15rem;
+        color: #a0a5ad;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
       .name-title {
         font-size: 2rem;
         margin-bottom: 0.5rem;
@@ -170,6 +187,57 @@
         font-size: 1.5rem;
         color: #4a4a4a;
         margin-bottom: 1rem;
+      }
+      .journey-timeline {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 1.5rem 0 1.25rem;
+      }
+      .timeline-item {
+        position: relative;
+        padding: 1.25rem 1rem 0 0;
+        border-top: 1px solid #d9e2ec;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #3273dc;
+        box-shadow: 0 0 0 4px #fff;
+      }
+      .timeline-year {
+        color: #3273dc;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+      .timeline-title {
+        margin: 0.2rem 0 0.05rem;
+        color: #363636;
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      .timeline-place {
+        margin: 0 !important;
+        color: #6b7280;
+        font-size: 0.82rem;
+        line-height: 1.35;
+      }
+      .timeline-focus {
+        margin: 0.35rem 0 0 !important;
+        color: #4a4a4a;
+        font-size: 0.82rem;
+        line-height: 1.35;
+      }
+      .timeline-link {
+        display: inline-block;
+        margin-top: 0.3rem;
+        font-size: 0.75rem;
       }
       .section-title {
         color: #363636;
@@ -260,6 +328,23 @@
           margin-right: 0;
           margin-bottom: 0.3rem;
         }
+        .journey-timeline {
+          display: block;
+          margin-left: 0.3rem;
+        }
+        .timeline-item {
+          padding: 0 0 1.25rem 1.25rem;
+          border-top: 0;
+          border-left: 1px solid #d9e2ec;
+        }
+        .timeline-item:last-child {
+          padding-bottom: 0;
+          border-left-color: transparent;
+        }
+        .timeline-item::before {
+          top: 0.25rem;
+          left: -5px;
+        }
       }
     </style>
   </head>
@@ -314,6 +399,10 @@
                     <span>Semantic Scholar</span>
                 </a>
               </div>
+              <div class="hobbies-note">
+                <span class="hobbies-label">Beyond research</span>
+                Yoga 🧘‍♀️ · Tennis 🎾 · Arts 🖼️ · Travel 🗺️
+              </div>
             </div>
 
             <div class="content">
@@ -321,18 +410,11 @@
               <div class="chinese-name">江 宇阳</div>
               
               <div class="block">
-                <p>Ph.D. student (incoming)<br>
+                <p>Ph.D. student<br>
                 Department of Computer Science, University of Southern California<br>
                 Email: <a href="mailto:kjiang4work@gmail.com">kjiang4work@gmail.com</a><br>
               </div>
               
-              <div class="block">
-                <p>
-                  I'm currently a research intern (2026) at <a href="https://vectorinstitute.ai/">Vector Institute</a>, focusing on agent safety audits. Before that, I earned my B.Econ. in Economics and Mathematics from the <a href="https://cema.cufe.edu.cn/">China Economics and Management Academy</a> at CUFE (Beijing, China, 2023; <a href="https://github.com/YuyangJ0/CUFE-Playground">Playground</a>), where I studied modeling human behavior at both micro and macro levels. To deepen my expertise in data-driven methods, I later joined the <a href="https://stat.uchicago.edu/">Department of Statistics</a> for an M.S. in Statistics at UChicago (Chicago, IL, 2025; <a href="https://github.com/YuyangJ0/UChicago-Playground">Playground</a>), where I have been strengthening my theoretical foundations in machine learning and deep learning.
-                </p>
-                <p>In my spare time, I enjoy yoga 🧘‍♀️, tennis 🎾, arts 🖼️ (painting, symbolism, curation, etc.), and traveling 🗺️.</p>
-              </div>
-
               <!-- Research Interest Section -->
               <h2 class="section-title">Research Interest: AI Evaluation</h2>
               <div class="content">
@@ -343,6 +425,29 @@
                   <li><strong>Interactive (Agentic) Evaluation:</strong> (1) Study the strengths and limits of foundational structures that emerge in agentic systems; (2) test the robustness of cooperative behaviors under adversarial conditions.</li>
                 </ul>
                 <p>I'm especially interested in applying these ideas to <strong>AI safety</strong> and <strong>healthcare</strong>.</p>
+              </div>
+
+              <div class="journey-timeline" aria-label="Academic and research journey">
+                <div class="timeline-item">
+                  <span class="timeline-year">2023</span>
+                  <h3 class="timeline-title">B.Econ. · Economics &amp; Mathematics</h3>
+                  <p class="timeline-place"><a href="https://cema.cufe.edu.cn/">CUFE</a> · Beijing</p>
+                  <p class="timeline-focus">Human behavior modeling</p>
+                  <a class="timeline-link" href="https://github.com/YuyangJ0/CUFE-Playground">Playground →</a>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-year">2025</span>
+                  <h3 class="timeline-title">M.S. · Statistics</h3>
+                  <p class="timeline-place"><a href="https://stat.uchicago.edu/">UChicago</a> · Chicago</p>
+                  <p class="timeline-focus">Machine learning &amp; deep learning</p>
+                  <a class="timeline-link" href="https://github.com/YuyangJ0/UChicago-Playground">Playground →</a>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-year">2026 · NOW</span>
+                  <h3 class="timeline-title">Research Intern</h3>
+                  <p class="timeline-place"><a href="https://vectorinstitute.ai/">Vector Institute</a></p>
+                  <p class="timeline-focus">Agent safety audits</p>
+                </div>
               </div>
             </div>
           </div>
