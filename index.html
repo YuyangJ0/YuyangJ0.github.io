@@ -193,7 +193,8 @@
         margin-bottom: 1rem;
       }
       .timeline-viewport {
-        width: 90%;
+        width: 100%;
+        box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: auto;
         max-height: 360px;
@@ -214,15 +215,23 @@
       }
       .journey-timeline {
         display: block;
+        position: relative;
+      }
+      .journey-timeline::before {
+        content: "";
+        position: absolute;
+        top: -0.65rem;
+        bottom: -0.65rem;
+        left: 0;
+        width: 1px;
+        background: #d9e2ec;
       }
       .timeline-item {
         position: relative;
         padding: 0 0 1.5rem 1.5rem;
-        border-left: 1px solid #d9e2ec;
       }
       .timeline-item:last-child {
         padding-bottom: 0;
-        border-left-color: transparent;
       }
       .timeline-item::before {
         content: "";
@@ -412,10 +421,10 @@
                     <span>Semantic Scholar</span>
                 </a>
               </div>
-              <div class="hobbies-note">
+              <!-- <div class="hobbies-note">
                 <span class="hobbies-label">Beyond research</span>
                 Yoga 🧘‍♀️ · Tennis 🎾 · Arts 🖼️ · Travel 🗺️
-              </div>
+              </div> -->
             </div>
 
             <div class="content">
@@ -429,9 +438,9 @@
               </div>
               
               <!-- Research Interest Section -->
-              <h2 class="section-title">Research Interest: AI Evaluation</h2>
+              <h2 class="section-title">Research Interest: Science of Evaluation</h2>
               <div class="content">
-                <p>Robust evaluation is essential for guiding the training of reliable systems. It not only measures system performance, but also seeks to understand system behavior and, most importantly, continuously refine alignment rubrics so they reflect rational human intentions and can be distilled into the evaluation process.</p>
+                <p>Robust evaluation methodology is essential for guiding the training of reliable systems. It not only measures system performance, but also seeks to understand system behavior and, most importantly, continuously refine alignment rubrics so they reflect rational human intentions and can be distilled into the training process.</p>
                 <ul>
                   <li><strong>Static Evaluation:</strong> Design granular yet scalable metrics that capture richer task-specific properties and better match real design goals.</li>
                   <li><strong>Human-in-the-Loop Evaluation:</strong> (1) Build representative feedback loops under limited budgets; (2) monitor bidirectional risks in human-AI interaction (e.g., humans: over-reliance, manipulation; AI: over-alignment, sycophancy) and develop collaboration paradigms that preserve rationality on both sides.</li>
